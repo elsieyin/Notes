@@ -44,9 +44,9 @@ embeddings = elmo(
     as_dict=True)["elmo"]
 ```
 
-word_emb: ELMo的最开始一层的基于character的word embedding, shape为[batch_size, max_length, 512]
-lstm_outpus1/2: ELMo中的第一层和第二层LSTM的隐状态输出，shape同样为 [batch_size, max_length, 1024]
-elmo: 对应文章中的公式1，每个词的输入层(word_emb)，第一层LSTM输出，第二层LSTM输出的线性加权之后的最终的词向量，shape为[batch_size, max_length, 1024]，此外这个线性权重是可训练的。
-default: 前面得到的均为word级别的向量，这个选项给出了简单使用mean-pooling求的句子级别的向量，即将上述elmo的所有词取平均，方便后续下游任务。
-sequence_len 输入中每个句子的长度
++word_emb: ELMo的最开始一层的基于character的word embedding, shape为[batch_size, max_length, 512]
++lstm_outpus1/2: ELMo中的第一层和第二层LSTM的隐状态输出，shape同样为 [batch_size, max_length, 1024]
++elmo: 对应文章中的公式1，每个词的输入层(word_emb)，第一层LSTM输出，第二层LSTM输出的线性加权之后的最终的词向量，shape为[batch_size, max_length, 1024]，此外这个线性权重是可训练的。
++default: 前面得到的均为word级别的向量，这个选项给出了简单使用mean-pooling求的句子级别的向量，即将上述elmo的所有词取平均，方便后续下游任务。
++sequence_len 输入中每个句子的长度
 一般情况使用output ['elmo'] 也就是Allennlp版本的elmo_representations， 即可得到每个词的ELMo 词向量，即可用于后续的任务，比如分类等。
