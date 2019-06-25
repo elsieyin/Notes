@@ -1,6 +1,6 @@
-前文提了这么多elmo的优点，现在说一说缺点。
+说一说elmo缺点。
 
-那么站在现在这个时间节点看，ELMO 有什么值得改进的缺点呢？
+ELMO之后有了Bert，这样回看，ELMO 有什么值得改进的缺点呢？
 首先，一个非常明显的缺点在特征抽取器选择方面，ELMO 使用了 LSTM 而不是新贵 Transformer，
 Transformer 是谷歌在 17 年做机器翻译任务的“Attention is all you need”的论文中提出的，引起了相当大的反响，
 很多研究已经证明了 Transformer 提取特征的能力是要远强于 LSTM 的。如果 ELMO 采取 Transformer 作为特征提取器，
