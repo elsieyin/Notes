@@ -1,6 +1,6 @@
 [allennlp](https://github.com/allenai/allennlp/blob/master/tutorials/how_to/elmo.md#using-elmo-as-a-pytorch-module-to-train-a-new-model)
 
-####Pytorch版本####
+Pytorch版本
 Allennlp的ELMo的API为allennlp.modules.elmo.Elmo,摘要如下:
  
 options_file : ELMo JSON options file
@@ -26,8 +26,8 @@ character_ids = batch_to_ids(sentences_lists)
 embeddings = elmo(character_ids)['elmo_representations']
 ```
 
-####TF的版本比较简单
-(TFhub)[https://tfhub.dev/google/elmo/2]
+TF的版本比较简单
+[TFhub](https://tfhub.dev/google/elmo/2)
 详见训练作业
 
 ```
