@@ -1,5 +1,6 @@
 [allennlp](https://github.com/allenai/allennlp/blob/master/tutorials/how_to/elmo.md#using-elmo-as-a-pytorch-module-to-train-a-new-model)
-####Pytorch版本
+
+####Pytorch版本####
 Allennlp的ELMo的API为allennlp.modules.elmo.Elmo,摘要如下:
  
 options_file : ELMo JSON options file
@@ -22,10 +23,13 @@ elmo = Elmo(options_file, weight_file, 1, dropout=0)
 # use batch_to_ids to convert sentences to character ids
 sentence_lists = ["I have a dog", "How are you , today is Monday","I am fine thanks"]
 character_ids = batch_to_ids(sentences_lists)
-embeddings = elmo(character_ids)['elmo_representations']```
+embeddings = elmo(character_ids)['elmo_representations']
+```
 
-####(TF的版本比较简单)[https://tfhub.dev/google/elmo/2]
-见训练作业
+####TF的版本比较简单
+(TFhub)[https://tfhub.dev/google/elmo/2]
+详见训练作业
+
 ```
 elmo = hub.Module("https://tfhub.dev/google/elmo/2", trainable=True)
 tokens_input = [["the", "cat", "is", "on", "the", "mat"],
@@ -38,7 +42,7 @@ embeddings = elmo(
     },
     signature="tokens",
     as_dict=True)["elmo"]
-    ```
+```
 
 word_emb: ELMo的最开始一层的基于character的word embedding, shape为[batch_size, max_length, 512]
 lstm_outpus1/2: ELMo中的第一层和第二层LSTM的隐状态输出，shape同样为 [batch_size, max_length, 1024]
